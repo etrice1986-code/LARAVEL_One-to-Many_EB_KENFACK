@@ -2,6 +2,14 @@
     
     <div class="py-5 my-4 bg-secondary bg-opacity-10 rounded-4 shadow-sm border border-secondary border-opacity-10">
         <div class="container py-4 text-center">
+
+         
+            @if(session('message'))
+                <div class="alert alert-success border-0 shadow-sm text-center mb-4 py-3">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> {{ session('message') }}
+                </div>
+            @endif
+
     
             <h1 class="display-4 fw-bold text-dark mb-3">
                 Benvenuto nel tuo <span class="text-primary">Blog & Shop</span> CRUD

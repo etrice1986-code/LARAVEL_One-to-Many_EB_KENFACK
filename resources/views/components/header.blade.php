@@ -20,13 +20,14 @@
                 </li>
             </ul>
 
-            <!-- Link a destra (Auth) -->
+            <!--  (Auth) -->
             <ul class="navbar-nav ms-auto align-items-center">
                 @guest
                     {{-- Visibile solo se l'utente OSPITE --}}
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light btn-sm px-3 me-2 border-0 text-white" href="{{ route('login') }}">Accedi</a>
+                    <a class="nav-link px-3 me-2 text-white fw-semibold custom-login-link" href="{{ route('login') }}">Accedi</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="btn btn-primary btn-sm px-3 rounded-pill text-white shadow-sm" href="{{ route('register') }}">Registrati</a>
                     </li>

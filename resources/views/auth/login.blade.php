@@ -14,7 +14,6 @@
     <div class="row mt-4 justify-content-center">
         <div class="col-12 col-md-6">
               
-            <!-- 🌟 AGGIUNGI QUESTO BLOCCO QUI SOTTO: Mostra il messaggio di logout -->
             @if(session('message'))
                 <div class="alert alert-success border-0 shadow-sm text-center mb-4 py-3">
                     <i class="bi bi-check-circle-fill text-success me-2"></i> {{ session('message') }}

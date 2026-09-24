@@ -11,7 +11,7 @@
                 </nav>
 
                 <div class="row justify-content-between align-items-start g-4">
-                    {{-- COLONNA IMMAGINE PRODOTTO --}}
+
                     <div class="col-12 col-md-6 text-center">
                         <div class="p-3 bg-white shadow-sm rounded-4 border overflow-hidden" style="max-height: 450px; width: 100%;">
                          <img 
@@ -19,8 +19,10 @@
                             class="card-img-top" 
                             alt="{{ $product->name }}"
                             >
-
                         </div>
+                        @auth
+                        <x-action-buttons :item="$product" />
+                        @endauth
                     </div>
 
                     {{-- COLONNA DATI E DETTAGLI --}}
@@ -56,7 +58,7 @@
 
                             <!-- COMPONENTE -->
                             <div class="border-top pt-2">
-                                <x-action-buttons :item="$product" />
+                                
                             </div>
                         </div>
                     </div>

@@ -25,19 +25,42 @@ class ArticleController extends Controller
     }
 
     
-   
+       /**
+     * Salva un nuovo articolo nel database.
+     */
+    public function store(Request $request)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'subtitle' => 'required|string|max:255',
+        'body' => 'required|string',
+        'img' => 'nullable|image|max:2048',
+    ]);
+
+    if ($request->hasFile('img')) {
+        $img = $request->file('img')->store('img', 'public');
+    } else {
+        $img = 'img/default.png'; 
+    }
+
+    Article::create([
+        'title' => $request->title,
+        'subtitle' => $request->subtitle,
+        'body' => $request->body,
+        'img' => $img, 
+        'user_id' => auth()->id(),
+    ]);
+
+    return redirect()->route('article.index')->with('message', 'Articolo creato con successo!');
+}
 
     /**
      * Mostra il dettaglio di un singolo articolo.
      */
     public function show(Article $article)
     {
-        return view('articles.show', compact('article')); // <-- CORRETTO: Aggiunta la 's' (plurale)
+        return view('articles.show', compact('article')); 
     }
-
-
-
-
 
         /**
      * Mostra il form di modifica per un articolo.

@@ -69,6 +69,6 @@ public function register(Request $request)
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login')->with('message', 'Disconnessione effettuata.');
+        return redirect()->route('home')->with('message', 'Disconnessione effettuata.');
     }
 }

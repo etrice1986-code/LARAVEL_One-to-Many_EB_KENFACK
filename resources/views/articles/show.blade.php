@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <!-- IMMAGINE DI COPERTINA  -->
+                <!-- IMMAGINE CP -->
                 <div class="mb-5 shadow-sm rounded-4 overflow-hidden border" style="max-height: 450px; width: 100%;">
                     <img src="{{ Storage::url($article->img) }}" class="w-100 h-100" alt="{{ $article->title }}" style="object-fit: cover; max-height: 450px;">
                 </div>
@@ -43,12 +43,12 @@
                 
                 <hr class="text-black-50 my-4">
 
-                <!-- PULSANTI COMPONENTE -->
                 <div class="my-4">
+                <!--  COMPONENTE -->
+                    @auth
                     <x-action-buttons :item="$article" />
+                    @endauth
                 </div>
-
-                <!-- PULSANTE TORNA INDIETRO -->
                 <div class="mt-5 text-center">
                     <a href="{{ route('article.index') }}" class="btn btn-outline-dark rounded-pill px-4 fw-semibold shadow-sm">
                         <i class="bi bi-arrow-left me-2"></i> Torna alla lista degli articoli

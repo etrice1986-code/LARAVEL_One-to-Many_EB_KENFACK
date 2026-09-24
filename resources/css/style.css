@@ -11,6 +11,16 @@ main {
     flex: 1;
 }
 
+
+/*--- root---*/
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+    --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+    --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); 
+    --bg-light: #f4f5f9;
+}
+
+
 /*CARD*/
 .custom-card {
     border-radius: 12px;
@@ -30,3 +40,111 @@ main {
     border-radius: 12px 12px 0 0;
 }
 
+body {
+    background: #0f0f17; 
+    color: #e6e6e6;      
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    
+    background-image: radial-gradient(circle at top left, rgba(0,200,255,0.15), transparent 60%),
+                      radial-gradient(circle at bottom right, rgba(120,0,255,0.15), transparent 60%);
+}
+
+
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    color: #1e293b;
+}
+
+/* --- NAVBAR  --- */
+.navbar {
+    background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 100%) !important;
+    border-bottom: 2px solid #6366f1;
+}
+
+.navbar .navbar-brand {
+    color: #a855f7 !important;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* ---  HERO --- */
+.custom-hero {
+    background: linear-gradient(-45deg, #ffedd5, #fee2e2, #e0e7ff, #dcfce7);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    border: none !important;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---  CARD  HOVER  --- */
+.article-hover-card, .product-hover-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    border: 1px solid rgba(99, 102, 241, 0.08) !important;
+}
+
+.article-hover-card:hover, .product-hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15) !important; 
+    border-color: #a855f7 !important; 
+}
+
+/*  immagini */
+.card overflow-hidden img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.article-hover-card:hover img, .product-hover-card:hover img {
+    transform: scale(1.08);
+}
+
+/* --- BOTTONI --- */
+.btn-primary {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    transition: opacity 0.2s ease;
+}
+.btn-success {
+    background: var(--success-gradient) !important;
+    border: none !important;
+}
+.btn-warning {
+    background: var(--warning-gradient) !important;
+    border: none !important;
+    color: white !important;
+}
+.btn-primary:hover, .btn-success:hover, .btn-warning:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* --- AUTORE  --- */
+.bg-light.rounded-4.shadow-sm {
+    background-color: #ffffff !important;
+    border-left: 4px solid #6366f1 !important; 
+}
+
+/* ---  FOCUS/  FORM --- */
+.form-control:focus {
+    border-color: #a855f7 !important;
+    box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.2) !important;
+}
+
+/*HOVER ATICLE*/
+  .article-hover-card:hover {
+      transform: translateY(-5px); 
+      box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12) !important; 
+ }
+
+ /*ARTICLE HOVER*/
+  .product-hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12) !important;
+    }

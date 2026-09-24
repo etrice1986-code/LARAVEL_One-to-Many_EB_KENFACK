@@ -6,7 +6,7 @@
         </h6>
 
         <p class="mb-1 text-secondary">
-            Mio‑blog Laravel — esercitazione CRUD
+            Mio‑blog Laravel — Selfwork One-to-Many
         </p>
 
         <small class="text-secondary">
